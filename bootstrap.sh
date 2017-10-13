@@ -1,8 +1,7 @@
+yum -y install git
 yum -y install httpd
 systemctl start httpd
 systemctl enable httpd
-if ! [ -L /var/www/html ]; then
-  rm -rf /var/www/html
-  ln -fs /vagrant /var/www/html
-fi
+git clone https://github.com/devopsguy9/food.git /var/www/html/
 systemctl restart httpd
+
